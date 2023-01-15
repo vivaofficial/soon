@@ -1,0 +1,50 @@
+
+/* sRGB color. */
+:root {
+  --purple: rgb(167, 12, 255);
+  --orange: rgb(255, 129, 0);
+}
+
+/* Display-P3 color, when supported. */
+@media (color-gamut: p3) {
+  :root {
+    --purple: color(display-p3 0.6 0.1333 1);
+    --orange: color(display-P3 1 0.5373 0.1922);
+  }
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background: var(--purple);
+  color: var(--orange);  
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0 2rem;
+  padding: 0;
+}
+
+.welcome {
+  text-align: left;
+  margin: auto;
+}
+
+@media only screen and (min-width: 768px) {
+
+  .welcome {    
+    max-width: 900px;
+  }
+
+  .brand {    
+    width: 500px;
+  }
+}
+
