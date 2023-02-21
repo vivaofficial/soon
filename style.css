@@ -1,4 +1,3 @@
-
 /* sRGB color. */
 :root {
   --purple: rgb(167, 12, 255);
@@ -6,12 +5,13 @@
 }
 
 /* Display-P3 color, when supported. */
-@media (color-gamut: p3) {
+@supports (color-gamut: p3) {
   :root {
     --purple: color(display-p3 0.6 0.1333 1);
     --orange: color(display-P3 1 0.5373 0.1922);
   }
 }
+
 
 * {
   -webkit-font-smoothing: antialiased;
